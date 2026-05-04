@@ -1,0 +1,22 @@
+name: HassCheck
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  hasscheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: Daily-Nerd/hasscheck@main
+        with:
+          emit-publish: 'true'
+          publish-endpoint: 'https://hasscheck.io'
