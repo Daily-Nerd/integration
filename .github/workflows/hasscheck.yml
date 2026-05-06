@@ -21,3 +21,6 @@ jobs:
           emit-publish: 'true'
           publish-endpoint: 'https://hasscheck.io'
           ha-version: '2026.5.0'
+          smoke: 'true'
+          ha-version-matrix: '2026.5.0,2026.6.0b0'
+          smoke-timeout: '180'
